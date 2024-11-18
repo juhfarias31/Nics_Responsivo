@@ -20,8 +20,7 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    max-width: 100%;
+    width: 300px; /* Largura inicial */
 }
 
 h1 {
@@ -72,34 +71,44 @@ button:hover {
     text-align: center;
 }
 
-/* Media Query para telas pequenas */
-@media (max-width: 480px) {
-    body {
-        height: auto;
-        padding: 10px;
-    }
-
+/* Responsividade para dispositivos com largura até 480px */
+@media(max-width: 480px) {
+    /* Ajustando a largura da .container para caber na tela */
     .container {
-        width: 90%; /* Ajuste para que o container ocupe mais largura em telas menores */
+        width: 90%; /* Agora ocupa 90% da largura da tela em dispositivos pequenos */
         padding: 15px;
     }
 
-    h1 {
-        font-size: 24px; /* Ajusta o tamanho do título */
-    }
-
-    input {
-        padding: 10px; /* Aumenta o padding dos campos para torná-los mais fáceis de interagir */
-        font-size: 14px; /* Ajusta o tamanho da fonte dos campos */
-    }
-
-    button {
-        padding: 12px; /* Ajuste no padding do botão para telas pequenas */
-        font-size: 14px; /* Ajusta o tamanho da fonte do botão */
-    }
-
+    /* Ajustando a imagem de perfil */
     .div1 img {
-        width: 50%; /* Ajusta o tamanho da imagem para que caiba melhor em telas pequenas */
+        width: 60%; /* A imagem fica um pouco maior em telas pequenas */
         height: auto;
+    }
+
+    /* Ajustando os inputs e o botão para melhor usabilidade */
+    input {
+        padding: 10px;
+        margin: 5px 0 10px; /* Ajustando o espaçamento entre os campos */
+    }
+
+    /* Ajustando o botão de submit */
+    button {
+        padding: 12px;
+    }
+
+    /* Estilo para o botão de "Voltar para Login" */
+    button[type="button"] {
+        padding: 12px; /* Adiciona padding para facilitar o clique */
+        margin-top: 10px;
+    }
+    
+    /* Ajustando a altura da caixa de formulário */
+    .container {
+        padding: 20px;
+    }
+
+    /* Ajuste do título */
+    h1 {
+        font-size: 18px; /* Diminui o tamanho da fonte do título em dispositivos menores */
     }
 }

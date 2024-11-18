@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrossel de Imagens</title>
+    <title>Slider de Imagens</title>
     <style>
         body, html {
             margin: 0;
@@ -15,7 +15,7 @@
             background-color: #ffffff;
         }
 
-        .carousel {
+        .slider {
             width: 80%;
             max-width: 600px;
             position: relative;
@@ -24,18 +24,18 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .carousel-content {
+        .slider-content {
             display: flex;
             width: 100%;
             transition: transform 0.5s ease-in-out;
         }
 
-        .carousel-item {
+        .slider-item {
             flex: 0 0 100%;
             height: auto;
         }
 
-        .carousel-item img {
+        .slider-item img {
             width: 100%;
             border-radius: 8px;
         }
@@ -86,24 +86,42 @@
             right: 10px;
         }
 
-        /* Efeitos de Hover nos botões */
-        .prev:hover, .next:hover {
-            background-color: rgba(0, 0, 0, 0.3);
+        /* Estilos para telas menores */
+        @media (max-width: 480px) {
+            /* Ajusta o tamanho do slider para ocupar 90% da largura da tela */
+            .slider {
+                width: 90%;
+                max-width: none;
+                height: 250px;  /* Limita a altura do slider */
+            }
+
+            /* Ajusta os indicadores para serem um pouco menores */
+            .indicator {
+                width: 8px;
+                height: 8px;
+            }
+
+            /* Ajuste nos botões de navegação */
+            .prev, .next {
+                padding: 8px;
+                font-size: 16px;
+                background-color: rgba(0, 0, 0, 0.5); /* Torna o botão mais visível */
+            }
         }
 
     </style>
 </head>
 <body>
 
-    <section class="carousel">
-        <div class="carousel-content">
-            <div class="carousel-item">
+    <section class="slider">
+        <div class="slider-content">
+            <div class="slider-item">
                 <img src="./img/Foto1.png" alt="Imagem 1">
             </div>
-            <div class="carousel-item">
+            <div class="slider-item">
                 <img src="./img/Foto2.png" alt="Imagem 2">
             </div>
-            <div class="carousel-item">
+            <div class="slider-item">
                 <img src="./img/Foto3.png" alt="Imagem 3">
             </div>
         </div>
@@ -121,7 +139,7 @@
     </section>
 
     <script>
-        const carouselContent = document.querySelector('.carousel-content');
+        const sliderContent = document.querySelector('.slider-content');
         const indicators = document.querySelectorAll('.indicator');
         const prevButton = document.querySelector('.prev');
         const nextButton = document.querySelector('.next');
@@ -129,10 +147,10 @@
         let currentIndex = 0;
         const totalSlides = indicators.length;
 
-        // Função para atualizar o carrossel e os indicadores
-        function updateCarousel() {
+        // Função para atualizar o slide e os indicadores
+        function updateSlider() {
             const offset = -currentIndex * 100;
-            carouselContent.style.transform = `translateX(${offset}%)`;
+            sliderContent.style.transform = `translateX(${offset}%)`;
 
             // Atualizar indicadores
             indicators.forEach((indicator, index) => {
@@ -147,20 +165,20 @@
         // Função para ir para o slide anterior
         function prevSlide() {
             currentIndex = (currentIndex === 0) ? totalSlides - 1 : currentIndex - 1;
-            updateCarousel();
+            updateSlider();
         }
 
         // Função para ir para o slide seguinte
         function nextSlide() {
             currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
-            updateCarousel();
+            updateSlider();
         }
 
         // Definir evento para os indicadores
         indicators.forEach(indicator => {
             indicator.addEventListener('click', (event) => {
                 currentIndex = parseInt(event.target.dataset.slide);
-                updateCarousel();
+                updateSlider();
             });
         });
 
@@ -168,8 +186,8 @@
         prevButton.addEventListener('click', prevSlide);
         nextButton.addEventListener('click', nextSlide);
 
-        // Inicializar o carrossel
-        updateCarousel();
+        // Inicializar o slider
+        updateSlider();
     </script>
 
 </body>

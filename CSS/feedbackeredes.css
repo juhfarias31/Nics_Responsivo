@@ -12,7 +12,7 @@
     color: black;
     text-align: center;
     font-size: 90px;
-    font-weight: bold;
+    font-weight: bold; 
     top: 0;
     width: 100%;
 }
@@ -38,7 +38,6 @@
     background-color: #f0f0f0;
 }
 
-/* Lista de Feedbacks */
 .feedback-list {
     margin-top: 20px;
 }
@@ -97,7 +96,7 @@
     transform: scale(1.1);
 }
 
-/* Rodapé */
+/* Menu Dropup no Rodapé */
 .footer {
     position: fixed;
     left: 0;
@@ -115,13 +114,7 @@
     justify-content: center;
 }
 
-.icones {
-    display: flex;
-    padding: 16px;
-    width: 100%;
-    justify-content: space-around;
-}
-
+/* Menu */
 .dropbtn {
     background-color: #EBBE29;
     border: none;
@@ -154,7 +147,9 @@
 }
 
 /* Change color of dropup links on hover */
-.dropup-content a:hover {background-color: #ddd}
+.dropup-content a:hover {
+    background-color: #ddd;
+}
 
 /* Show the dropup menu on hover */
 .dropup:hover .dropup-content {
@@ -164,4 +159,93 @@
 /* Change the background color of the dropup button when the dropup content is shown */
 .dropup:hover .dropbtn {
     background-color: #F0CD5C;
+}
+
+.icones {
+    display: flex;
+    padding: 16px;
+    width: 100%;
+    justify-content: space-around;
+}
+
+/* Responsividade para telas pequenas (máximo 480px) */
+@media(max-width: 480px) {
+    /* Cabeçalho */
+    #header {
+        font-size: 40px; /* Reduz o tamanho da fonte */
+        padding: 10px; /* Diminui o padding */
+    }
+
+    /* Subcabeçalho */
+    .subcabecalho {
+        font-size: 20px; /* Diminui o tamanho da fonte */
+        height: 80px; /* Ajusta a altura */
+        padding: 10px; /* Ajusta o padding */
+    }
+
+    /* Feedbacks */
+    .feedback-item {
+        flex-direction: column; /* Alinha os itens em coluna */
+        align-items: flex-start; /* Alinha à esquerda */
+        padding: 10px;
+    }
+
+    .feedback-photo {
+        width: 50px; /* Reduz o tamanho da foto */
+        height: 50px; /* Reduz a altura */
+        margin-right: 10px;
+    }
+
+    .feedback-content h3 {
+        font-size: 1.2em; /* Ajusta o tamanho do título */
+    }
+
+    .feedback-content p {
+        font-size: 0.85em; /* Ajusta o tamanho do texto */
+    }
+
+    .stars {
+        font-size: 0.9em; /* Ajusta o tamanho das estrelas */
+    }
+
+    /* Redes Sociais */
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .social-icons a {
+        margin: 0 8px; /* Ajusta o espaço entre os ícones */
+    }
+
+    .social-icons img {
+        width: 40px; /* Reduz o tamanho dos ícones */
+        height: 40px;
+    }
+
+    /* Rodapé */
+    .footer {
+        height: 80px; /* Diminui a altura do rodapé */
+        padding: 5px 0; /* Diminui o padding */
+    }
+
+    .footer-container {
+        flex-direction: column; /* Alinha os itens do rodapé em coluna */
+    }
+
+    /* Menu */
+    .dropbtn {
+        font-size: 20px; /* Reduz o tamanho do texto no menu */
+    }
+
+    .icones {
+        flex-direction: column; /* Coloca os ícones em coluna */
+        padding: 10px 0; /* Ajusta o padding */
+    }
+
+    .icones a img {
+        width: 35px; /* Reduz o tamanho dos ícones no rodapé */
+        height: 35px;
+    }
 }

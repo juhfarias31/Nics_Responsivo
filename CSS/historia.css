@@ -7,21 +7,21 @@
 
 /* Cabeçalho */
 #header {
-    background-color: #EBBE29; /* Cor de fundo do cabeçalho */
-    padding: 5px 5px; /* Padding */
+    background-color: #EBBE29;
+    padding: 5px;
     color: black;
-    text-align: center; /* Texto centralizado */
-    font-size: 90px; /* Fonte grande */
+    text-align: center;
+    font-size: 90px;
     font-weight: bold;
-    position: fixed; /* Posição fixa */
+    position: fixed;
     top: 0;
-    width: 100%; /* Largura total */
+    width: 100%;
 }
 
 /* Subcabeçalho */
 .subcabecalho {
     text-align: center;
-    margin-top: 180px; /* Distância para abaixo do cabeçalho */
+    margin-top: 180px;
     height: 100px;
     color: #ddd;
     font-size: xx-large;
@@ -29,18 +29,17 @@
     background-color: dimgray;
 }
 
-/* Container flexível para conteúdo */
+/* Flex Container */
 .flex-container {
     display: flex;
-    justify-content: space-around; /* Distribuição igual entre os itens */
-    flex-direction: row; /* Alinhamento dos itens na linha */
+    justify-content: space-around;
+    flex-direction: row;
     background-color: #ddd;
     height: 100%;
     padding: 15px;
     gap: 5px;
 }
 
-/* Estilo dos itens dentro do container */
 .flex-container > div {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: x-large;
@@ -51,7 +50,7 @@
 }
 
 .item1 {
-    text-align: justify; /* Justifica o texto */
+    text-align: justify;
 }
 
 /* Rodapé */
@@ -72,7 +71,7 @@
     justify-content: center;
 }
 
-/* Menu Dropup */
+/* Menu */
 .dropbtn {
     background-color: #EBBE29;
     border: none;
@@ -85,7 +84,7 @@
     display: inline-block;
 }
 
-/* Dropup content (escondido por padrão) */
+/* Dropup content */
 .dropup-content {
     display: none;
     position: absolute;
@@ -96,7 +95,6 @@
     z-index: 1;
 }
 
-/* Links dentro do dropup */
 .dropup-content a {
     color: black;
     padding: 12px 16px;
@@ -104,25 +102,96 @@
     display: block;
 }
 
-/* Alteração de cor ao passar o mouse nos links */
 .dropup-content a:hover {
     background-color: #ddd;
 }
 
-/* Exibir o menu dropup ao passar o mouse */
+/* Show dropup menu on hover */
 .dropup:hover .dropup-content {
     display: block;
 }
 
-/* Alterar a cor do botão ao exibir o menu dropup */
+/* Change background color when dropup content is shown */
 .dropup:hover .dropbtn {
     background-color: #F0CD5C;
 }
 
-/* Ícones do rodapé */
 .icones {
     display: flex;
     padding: 16px;
     width: 100%;
     justify-content: space-around;
+}
+
+/* Media Query para telas pequenas (máximo 480px) */
+@media(max-width: 480px) {
+    /* Cabeçalho */
+    #header {
+        font-size: 40px; /* Reduz o tamanho da fonte */
+        padding: 10px;
+    }
+
+    /* Subcabeçalho */
+    .subcabecalho {
+        margin-top: 100px; /* Reduz a margem superior */
+        font-size: 1.5rem; /* Diminui o tamanho da fonte */
+        padding: 10px;
+    }
+
+    /* Flex container */
+    .flex-container {
+        flex-direction: column; /* Muda o layout para coluna */
+        padding: 10px;
+        gap: 10px; /* Aumenta o espaço entre os itens */
+    }
+
+    /* Ajustes nos itens */
+    .flex-container > div {
+        font-size: 1.2rem; /* Diminui o tamanho da fonte */
+        padding: 12px;
+        border-radius: 8px;
+    }
+
+    /* Ajuste do item 1 (Texto) */
+    .item1 {
+        font-size: 1rem; /* Diminui o tamanho do texto */
+        padding: 5px;
+    }
+
+    /* Ajuste da imagem (item2) */
+    .item2 img {
+        width: 100%; /* A imagem ocupará toda a largura disponível */
+        height: auto; /* Mantém a proporção da imagem */
+    }
+
+    /* Rodapé */
+    .footer {
+        height: 80px; /* Reduz a altura do rodapé */
+        padding: 5px 0; /* Diminui o padding */
+    }
+
+    .footer-container {
+        flex-direction: column; /* Organiza os ícones do rodapé em coluna */
+    }
+
+    .icones {
+        flex-direction: column; /* Organiza os ícones em coluna */
+        gap: 10px; /* Aumenta o espaçamento entre os ícones */
+        padding: 10px 0; /* Ajusta o padding */
+    }
+
+    .icones a img {
+        width: 35px; /* Reduz o tamanho dos ícones */
+        height: 35px;
+    }
+
+    /* Menu dropup */
+    .dropup {
+        font-size: 1rem; /* Diminui o tamanho da fonte do menu */
+    }
+
+    .dropup-content a {
+        font-size: 0.9rem; /* Diminui o tamanho da fonte dos links */
+        padding: 10px;
+    }
 }

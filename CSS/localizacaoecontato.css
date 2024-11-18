@@ -7,21 +7,22 @@
 
 /* Cabeçalho */
 #header {
-  background-color: #EBBE29; /* Cor de fundo do cabeçalho */
-  padding: 5px 5px; /* Padding */
+  background-color: #EBBE29;
+  padding: 5px;
   color: black;
-  text-align: center; /* Texto centralizado */
-  font-size: 90px; /* Fonte grande */
+  text-align: center;
+  font-size: 90px;
   font-weight: bold;
-  position: fixed; /* Posição fixa */
+  position: fixed;
   top: 0;
-  width: 100%; /* Largura total */
+  width: 100%;
+  z-index: 10; /* Para garantir que o cabeçalho fique acima dos outros elementos */
 }
 
 /* Subcabeçalho */
 .subcabecalho {
   text-align: center;
-  margin-top: 180px; /* Distância para abaixo do cabeçalho */
+  margin-top: 180px;
   height: 100px;
   color: #ddd;
   font-size: xx-large;
@@ -29,33 +30,30 @@
   background-color: rgb(106, 103, 103);
 }
 
-/* Div principal para localização */
+/* Div1 */
 .div1 {
   font-size: xx-large;
   text-align: center;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   background-color: rgb(167, 165, 165);
+  padding: 10px;
 }
 
-/* Div de horário e funcionamento */
+/* Div2 */
 .div2 {
   font-size: x-large;
   background-color: rgb(224, 223, 223);
   color: #4b4a4a;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: center;
-  align-content: center;
-  grid-column: span 5 / span 5;
-  grid-row: span 2 / span 2;
-  grid-row-start: 2;
+  padding: 20px;
 }
 
-/* Div de contato */
+/* Div3 */
 .div3 {
   background-color: #EBBE29;
   text-align: center;
-  grid-column-start: 5;
-  grid-row-start: 3;
+  padding: 20px;
 }
 
 /* Rodapé */
@@ -69,6 +67,7 @@
   text-align: center;
   padding: 10px 0;
   height: 107px;
+  z-index: 20; /* Para garantir que o rodapé fique acima de outros conteúdos */
 }
 
 .footer-container {
@@ -76,7 +75,7 @@
   justify-content: center;
 }
 
-/* Menu Dropup */
+/* Menu */
 .dropbtn {
   background-color: #EBBE29;
   border: none;
@@ -89,7 +88,7 @@
   display: inline-block;
 }
 
-/* Dropup content (escondido por padrão) */
+/* Dropup content */
 .dropup-content {
   display: none;
   position: absolute;
@@ -100,7 +99,7 @@
   z-index: 1;
 }
 
-/* Links dentro do dropup */
+/* Links inside the dropup */
 .dropup-content a {
   color: black;
   padding: 12px 16px;
@@ -108,25 +107,105 @@
   display: block;
 }
 
-/* Alteração de cor ao passar o mouse nos links */
+/* Hover effects */
 .dropup-content a:hover {
   background-color: #ddd;
 }
 
-/* Exibir o menu dropup ao passar o mouse */
+/* Show dropup menu on hover */
 .dropup:hover .dropup-content {
   display: block;
 }
 
-/* Alterar a cor do botão ao exibir o menu dropup */
+/* Change background color when dropup content is shown */
 .dropup:hover .dropbtn {
   background-color: #F0CD5C;
 }
 
-/* Ícones do rodapé */
+/* Ícones no rodapé */
 .icones {
   display: flex;
   padding: 16px;
   width: 100%;
   justify-content: space-around;
+}
+
+/* Media Query para telas pequenas (máximo 480px) */
+@media(max-width: 480px) {
+  /* Cabeçalho */
+  #header {
+      font-size: 40px; /* Reduz o tamanho da fonte */
+      padding: 10px;
+  }
+
+  /* Subcabeçalho */
+  .subcabecalho {
+      margin-top: 120px; /* Ajusta a margem superior */
+      font-size: 1.2rem; /* Reduz o tamanho da fonte */
+      padding: 10px;
+  }
+
+  /* Div1 */
+  .div1 {
+      font-size: 1rem; /* Reduz o tamanho da fonte */
+      padding: 10px;
+  }
+
+  /* Div2 */
+  .div2 {
+      font-size: 1rem; /* Reduz o tamanho da fonte */
+      padding: 15px;
+  }
+
+  /* Div3 */
+  .div3 {
+      padding: 15px;
+  }
+
+  /* Ajuste nas imagens */
+  .div1 img {
+      width: 100%; /* Ajusta a imagem para a largura total */
+      height: auto; /* Mantém a proporção da imagem */
+  }
+
+  /* Rodapé */
+  .footer {
+      padding: 8px 0; /* Reduz o padding do rodapé */
+      height: 80px; /* Reduz a altura do rodapé */
+  }
+
+  .footer-container {
+      flex-direction: column; /* Organiza os ícones em coluna */
+  }
+
+  .icones {
+      flex-direction: column; /* Organiza os ícones do rodapé em coluna */
+      gap: 10px; /* Aumenta o espaçamento entre os ícones */
+      padding: 10px 0; /* Ajusta o padding */
+  }
+
+  .icones a img {
+      width: 35px; /* Reduz o tamanho das imagens dos ícones */
+      height: 35px;
+  }
+
+  /* Menu dropup */
+  .dropup {
+      font-size: 1rem; /* Reduz o tamanho da fonte do menu */
+  }
+
+  .dropup-content a {
+      font-size: 0.9rem; /* Reduz o tamanho da fonte dos links */
+      padding: 10px;
+  }
+
+  /* Ajuste no conteúdo do rodapé */
+  .footer-container {
+      justify-content: center;
+  }
+
+  .footer-container a img {
+      width: 35px;
+      height: 35px;
+  }
 }

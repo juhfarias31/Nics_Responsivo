@@ -12,7 +12,7 @@ body {
     align-items: center;
     height: 100vh;
 }
-    
+
 .sacola-container {
     width: 90%;
     max-width: 400px;
@@ -23,13 +23,13 @@ body {
     padding: 20px;
     text-align: center;
 }
-    
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-    
+
 .logo {
     width: 60px;
 }
@@ -37,7 +37,7 @@ body {
 .user-icon {
     font-size: 24px;
 }
-    
+
 .sacola-title {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 24px;
@@ -45,44 +45,69 @@ body {
     margin: 10px 0;
 }
 
-.pedido-confirmado {
-    margin-top: 20px;
+.itens-adicionados h3,
+.entrega h3 {
     font-size: 18px;
+    color: #666;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.item-info {
+    flex: 1;
+    text-align: left;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.quantity-control button {
+    background-color: #ddd;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.quantity-control span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.entrega {
+    margin: 20px 0;
+    text-align: left;
+    font-size: 16px;
     color: #333;
 }
 
-.pedido-confirmado h3 {
-    font-size: 22px;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.confirmacao-info p {
-    margin: 5px 0;
-    color: #666;
-}
-
 .confirmar-pedido {
-    background-color: #EBBE29; /* Cor dourada */
-    color: white;
+    background-color: #EBBE29;
+    color: #fff;
     font-size: 18px;
-    padding: 15px;
+    padding: 10px;
     border: none;
-    border-radius: 10px; /* Bordas arredondadas */
+    border-radius: 5px;
     width: 100%;
     margin-top: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.confirmar-pedido:hover {
-    background-color: #d29e26; /* Tom mais escuro de dourado */
-    transform: translateY(-3px); /* Efeito de leve elevação */
-}
-
-.confirmar-pedido:active {
-    background-color: #c68e1d; /* Tom ainda mais escuro */
-    transform: translateY(0); /* Retorna ao estado normal quando pressionado */
 }
 
 .alterar-dados {
@@ -92,10 +117,76 @@ body {
     border: none;
     margin-top: 5px;
     cursor: pointer;
-    text-decoration: underline;
 }
 
-.alterar-dados:hover {
-    color: #333;
-    text-decoration: none;
+/* Responsividade para telas pequenas (máximo 480px) */
+@media(max-width: 480px) {
+    body {
+        padding: 10px;  /* Adiciona um pouco de espaçamento ao redor da página */
+    }
+
+    .sacola-container {
+        width: 100%;  /* Faz a sacola ocupar toda a largura da tela */
+        max-width: none;  /* Remove a largura máxima */
+        padding: 10px;  /* Ajusta o espaçamento interno */
+    }
+
+    .logo {
+        width: 50px;  /* Reduz o tamanho da logo */
+    }
+
+    .user-icon {
+        font-size: 20px;  /* Diminui o tamanho do ícone do usuário */
+    }
+
+    .sacola-title {
+        font-size: 20px;  /* Diminui o tamanho do título */
+    }
+
+    .itens-adicionados h3,
+    .entrega h3 {
+        font-size: 16px;  /* Diminui o tamanho dos subtítulos */
+    }
+
+    .item {
+        flex-direction: column;  /* Organiza os itens em coluna para melhor visualização */
+        align-items: flex-start;  /* Alinha os itens à esquerda */
+        margin-bottom: 15px;  /* Aumenta o espaçamento entre os itens */
+    }
+
+    .item img {
+        width: 40px;  /* Reduz o tamanho das imagens */
+        height: 40px;
+    }
+
+    .item-info {
+        text-align: left;
+        margin-bottom: 10px;  /* Adiciona um espaço entre a descrição e o controle de quantidade */
+    }
+
+    .quantity-control {
+        gap: 3px;  /* Diminui o espaço entre os botões */
+    }
+
+    .quantity-control button {
+        padding: 5px;  /* Ajusta o tamanho dos botões de quantidade */
+    }
+
+    .confirmar-pedido {
+        font-size: 16px;  /* Diminui o tamanho do botão de confirmação */
+        padding: 8px;  /* Diminui o padding do botão */
+    }
+
+    .alterar-dados {
+        font-size: 12px;  /* Diminui o tamanho do botão "Alterar Dados" */
+    }
+
+    .entrega img {
+        width: 8%;  /* Reduz o tamanho das imagens de entrega */
+        height: 8%;
+    }
+
+    .entrega p {
+        font-size: 14px;  /* Diminui o tamanho do texto na seção de entrega */
+    }
 }

@@ -7,15 +7,15 @@
 
 /* Cabeçalho */
 #header {
-  background-color: #EBBE29; /* Cor de fundo */
-  padding: 5px 5px; /* Um pouco de padding */
+  background-color: #EBBE29; /* Grey background */
+  padding: 5px 5px; /* Some padding */
   color: black;
-  text-align: center; /* Texto centralizado */
-  font-size: 90px; /* Fonte grande */
+  text-align: center; /* Centered text */
+  font-size: 90px; /* Big font size */
   font-weight: bold;
-  position: fixed; /* Posição fixa - fica no topo da página */
+  position: fixed; /* Fixed position - sit on top of the page */
   top: 0;
-  width: 100%; /* Largura total */
+  width: 100%; /* Full width */
 }
 
 .parent {
@@ -25,7 +25,7 @@
   gap: 0px;
 }
 
-/* Título dos Eventos */
+/* Subcabeçalho */
 .div1 {
   text-align: center;
   margin-top: 170px;
@@ -37,32 +37,13 @@
   grid-column: span 4 / span 4;
 }
 
-/* Imagem de Eventos */
 .div2 {
   text-align: center;
   margin-top: 50px;
 }
 
-.div2 img {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  border-radius: 8px;
-}
 
-/* Descrição dos Eventos */
-.div1 h2 {
-  color: #F0CD5C;
-  font-size: 2rem;
-}
-
-.div1 p {
-  color: #ddd;
-  font-size: 1.2rem;
-  margin: 20px;
-}
-
-/* Rodapé */
+/* Menu Dropup no Rodapé */
 .footer {
   position: fixed;
   left: 0;
@@ -80,13 +61,7 @@
   justify-content: center;
 }
 
-.icones {
-  display: flex;
-  padding: 16px;
-  width: 100%;
-  justify-content: space-around;
-}
-
+/* Menu */
 .dropbtn {
   background-color: #EBBE29;
   border: none;
@@ -106,7 +81,7 @@
   bottom: 50px;
   background-color: #F0CD5C;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
@@ -119,7 +94,9 @@
 }
 
 /* Change color of dropup links on hover */
-.dropup-content a:hover {background-color: #ddd}
+.dropup-content a:hover {
+  background-color: #ddd;
+}
 
 /* Show the dropup menu on hover */
 .dropup:hover .dropup-content {
@@ -129,4 +106,69 @@
 /* Change the background color of the dropup button when the dropup content is shown */
 .dropup:hover .dropbtn {
   background-color: #F0CD5C;
+}
+
+.icones {
+  display: flex;
+  padding: 16px;
+  width: 100%;
+  justify-content: space-around;
+}
+
+
+/* Responsividade para telas pequenas (máximo 480px) */
+@media(max-width: 480px) {
+  /* Cabeçalho */
+  #header {
+    font-size: 40px; /* Reduz o tamanho da fonte */
+    padding: 10px; /* Reduz o padding */
+  }
+
+  /* Ajustes no subcabeçalho */
+  .div1 {
+    font-size: 20px; /* Reduz o tamanho do texto */
+    margin-top: 120px; /* Ajusta o espaçamento */
+  }
+
+  /* Ajustes no layout */
+  .parent {
+    grid-template-columns: 1fr; /* Coloca tudo em uma coluna */
+    margin-top: 50px;
+  }
+
+  /* Ajustes no conteúdo principal */
+  .div2 {
+    width: 100%; /* Garante que a imagem ocupe toda a largura disponível */
+    margin-top: 30px;
+  }
+
+  .div2 img {
+    width: 100%; /* Ajusta a largura da imagem para caber na tela */
+    height: auto; /* Mantém a proporção da imagem */
+  }
+
+  /* Rodapé */
+  .footer {
+    height: 80px; /* Diminui a altura do rodapé */
+    padding: 5px 0; /* Diminui o padding */
+  }
+
+  .footer-container {
+    flex-direction: column; /* Coloca os ícones em coluna */
+  }
+
+  /* Menu */
+  .dropbtn {
+    font-size: 24px; /* Diminui o tamanho do texto do botão */
+  }
+
+  .icones {
+    flex-direction: column; /* Alinha os ícones verticalmente */
+    padding: 10px 0; /* Ajusta o padding */
+  }
+
+  .icones a img {
+    width: 35px; /* Reduz o tamanho dos ícones */
+    height: 35px; /* Ajusta a altura dos ícones */
+  }
 }

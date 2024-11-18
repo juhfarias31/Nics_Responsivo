@@ -8,7 +8,7 @@
 /* Corpo da página */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5cb4064; /* Cor de fundo suave */
+    background-color: #f5cb4064;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,15 +83,15 @@ button {
 
 /* Cabeçalho */
 #header {
-    background-color: #EBBE29; /* Cor de fundo do cabeçalho */
-    padding: 5px 5px; /* Padding */
+    background-color: #EBBE29; /* Grey background */
+    padding: 5px 5px; /* Some padding */
     color: black;
-    text-align: center; /* Texto centralizado */
-    font-size: 90px; /* Fonte grande */
+    text-align: center; /* Centered text */
+    font-size: 90px; /* Big font size */
     font-weight: bold;
-    position: fixed; /* Posição fixa */
+    position: fixed; /* Fixed position - sit on top of the page */
     top: 0;
-    width: 100%; /* Largura total */
+    width: 100%; /* Full width */
 }
 
 /* Menu Dropup no Rodapé */
@@ -136,7 +136,7 @@ button {
     z-index: 1;
 }
 
-/* Links dentro do dropup */
+/* Links inside the dropup */
 .dropup-content a {
     color: black;
     padding: 12px 16px;
@@ -144,25 +144,100 @@ button {
     display: block;
 }
 
-/* Alterar a cor dos links do dropup ao passar o mouse */
-.dropup-content a:hover {
-    background-color: #ddd;
-}
+/* Change color of dropup links on hover */
+.dropup-content a:hover {background-color: #ddd}
 
-/* Exibir o menu dropup ao passar o mouse */
+/* Show the dropup menu on hover */
 .dropup:hover .dropup-content {
     display: block;
 }
 
-/* Alterar a cor do botão quando o menu dropup for exibido */
+/* Change the background color of the dropup button when the dropup content is shown */
 .dropup:hover .dropbtn {
     background-color: #F0CD5C;
 }
 
-/* Ícones do rodapé */
 .icones {
     display: flex;
     padding: 16px;
     width: 100%;
     justify-content: space-around;
+}
+
+/* Responsividade para telas pequenas (máximo 480px) */
+@media(max-width: 480px) {
+    /* Container */
+    .container {
+        margin-top: 80px; /* Ajusta o espaço superior */
+        padding: 15px; /* Diminui o padding */
+        width: 90%; /* Ajusta a largura */
+        max-width: 100%; /* Garante que o container ocupe toda a largura */
+    }
+
+    /* Cabeçalho */
+    #header {
+        font-size: 40px; /* Diminui o tamanho da fonte */
+        padding: 10px; /* Ajusta o padding */
+    }
+
+    /* Título de confirmação */
+    h1 {
+        font-size: 1.5rem; /* Reduz o tamanho da fonte */
+        margin-bottom: 15px; /* Diminui o espaçamento inferior */
+    }
+
+    /* Mensagem de confirmação */
+    p {
+        font-size: 0.9rem; /* Diminui o tamanho da fonte */
+        margin-bottom: 20px; /* Ajusta o espaçamento */
+    }
+
+    /* Detalhes do pedido */
+    .detalhes-pedido {
+        padding: 10px; /* Diminui o padding */
+    }
+
+    .detalhes-pedido h2 {
+        font-size: 1rem; /* Diminui o tamanho do título */
+        margin-bottom: 8px; /* Ajusta o espaçamento inferior */
+    }
+
+    .detalhes-pedido li {
+        font-size: 0.8rem; /* Diminui o tamanho da fonte dos itens */
+    }
+
+    /* Botão */
+    button {
+        font-size: 0.9rem; /* Diminui o tamanho da fonte do botão */
+        padding: 8px 15px; /* Ajusta o padding do botão */
+    }
+
+    /* Rodapé */
+    .footer {
+        height: 80px; /* Reduz a altura do rodapé */
+        padding: 5px 0; /* Diminui o padding */
+    }
+
+    .footer-container {
+        flex-direction: column; /* Organiza os ícones do rodapé em coluna */
+    }
+
+    .icones {
+        flex-direction: column; /* Organiza os ícones em coluna */
+        padding: 10px 0; /* Ajusta o padding */
+    }
+
+    .icones a img {
+        width: 35px; /* Reduz o tamanho dos ícones */
+        height: 35px;
+    }
+
+    /* Menu */
+    .dropbtn {
+        font-size: 16px; /* Diminui o tamanho da fonte do botão do menu */
+    }
+
+    .dropup-content a {
+        font-size: 0.9rem; /* Ajusta o tamanho da fonte dos links */
+    }
 }

@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-/* Estilo para o body */
+/* Estilo do body */
 body {
   font-family: Arial, sans-serif;
   background-color: #f5ca40cc;
@@ -16,7 +16,7 @@ body {
   margin: 0;
 }
 
-/* Container do formulário */
+/* Container principal */
 .container {
   margin-top: 100px;
   background-color: #EBBE29;
@@ -26,18 +26,18 @@ body {
   width: 300px;
 }
 
-/* Título da página */
+/* Título principal */
 h1 {
   text-align: center;
 }
 
-/* Label de cada campo */
+/* Labels de campos de entrada */
 label {
   margin-top: 10px;
   display: block;
 }
 
-/* Estilo para os inputs */
+/* Estilo dos inputs */
 input {
   width: 94%;
   padding: 8px;
@@ -46,7 +46,7 @@ input {
   border-radius: 4px;
 }
 
-/* Estilo para o botão de submit */
+/* Botões */
 button {
   text-align: center;
   width: 100%;
@@ -63,7 +63,7 @@ button[type="button"] {
   color: black;
   border: none;
   text-align: center;
-  padding: 0; /* Remove padding for a cleaner look */
+  padding: 0; /* Remove padding para um visual mais limpo */
 }
 
 button[type="button"]:hover {
@@ -74,7 +74,7 @@ button:hover {
   opacity: 0.9;
 }
 
-/* Link de cadastro */
+/* Link para cadastro */
 .register-link {
   text-align: center;
   margin-top: 10px;
@@ -89,22 +89,23 @@ button:hover {
   text-decoration: underline;
 }
 
-/* Centralização do ícone de perfil */
+/* Div do ícone de perfil */
 .div1 {
   text-align: center;
 }
 
 /* Cabeçalho */
 #header {
-  background-color: #EBBE29; /* Cor de fundo do cabeçalho */
-  padding: 5px 5px; /* Padding */
+  background-color: #EBBE29;
+  padding: 5px 5px;
   color: black;
-  text-align: center; /* Texto centralizado */
-  font-size: 90px; /* Fonte grande */
+  text-align: center;
+  font-size: 90px;
   font-weight: bold;
-  position: fixed; /* Posição fixa */
+  position: fixed;
   top: 0;
-  width: 100%; /* Largura total */
+  width: 100%;
+  z-index: 10;
 }
 
 /* Rodapé */
@@ -118,6 +119,7 @@ button:hover {
   text-align: center;
   padding: 10px 0;
   height: 87px;
+  z-index: 20;
 }
 
 .footer-container {
@@ -138,7 +140,7 @@ button:hover {
   display: inline-block;
 }
 
-/* Dropup content (escondido por padrão) */
+/* Conteúdo do menu dropup */
 .dropup-content {
   display: none;
   position: absolute;
@@ -149,7 +151,7 @@ button:hover {
   z-index: 1;
 }
 
-/* Links dentro do dropup */
+/* Links do menu dropup */
 .dropup-content a {
   color: black;
   padding: 12px 16px;
@@ -157,23 +159,95 @@ button:hover {
   display: block;
 }
 
-/* Alteração de cor ao passar o mouse nos links */
-.dropup-content a:hover {background-color: #ddd}
+/* Hover do menu dropup */
+.dropup-content a:hover { background-color: #ddd }
 
-/* Exibir o menu dropup ao passar o mouse */
+/* Exibe o menu dropup ao passar o mouse */
 .dropup:hover .dropup-content {
   display: block;
 }
 
-/* Alterar a cor do botão ao exibir o menu dropup */
+/* Altera a cor de fundo do botão dropup quando o menu está visível */
 .dropup:hover .dropbtn {
   background-color: #F0CD5C;
 }
 
-/* Ícones do rodapé */
+/* Ícones no rodapé */
 .icones {
   display: flex;
   padding: 16px;
   width: 100%;
   justify-content: space-around;
+}
+
+/* Media Query para telas pequenas (máximo 480px) */
+@media(max-width: 480px) {
+
+  /* Cabeçalho */
+  #header {
+    font-size: 50px; /* Reduz o tamanho da fonte */
+    padding: 10px;
+  }
+
+  /* Container */
+  .container {
+    width: 90%; /* Reduz a largura do container */
+    margin-top: 120px; /* Ajusta o espaçamento superior */
+    padding: 15px;
+  }
+
+  /* Tamanho da imagem de perfil */
+  .div1 img {
+    width: 40%; /* Reduz o tamanho da imagem */
+    height: auto;
+  }
+
+  /* Estilo dos inputs */
+  input {
+    width: 100%; /* Ajusta a largura dos inputs */
+    padding: 10px; /* Aumenta o padding */
+  }
+
+  /* Tamanho do botão */
+  button {
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  /* Texto de cadastro */
+  .register-link {
+    font-size: 0.9rem;
+  }
+
+  /* Rodapé */
+  .footer {
+    height: 70px; /* Ajusta a altura do rodapé */
+    padding: 8px 0;
+  }
+
+  /* Menu Dropup no rodapé */
+  .dropbtn {
+    width: 40px; /* Reduz a largura do botão de menu */
+  }
+
+  .footer-container {
+    flex-direction: column; /* Organiza os itens em coluna */
+  }
+
+  /* Ajuste no menu dropup */
+  .dropup-content a {
+    font-size: 0.9rem; /* Reduz o tamanho da fonte dos links do menu */
+    padding: 8px 10px; /* Ajusta o padding dos links */
+  }
+
+  /* Ícones no rodapé */
+  .icones {
+    flex-direction: column; /* Organiza os ícones em coluna */
+    gap: 8px;
+  }
+
+  .icones a img {
+    width: 35px; /* Reduz o tamanho das imagens dos ícones */
+    height: 35px;
+  }
 }
