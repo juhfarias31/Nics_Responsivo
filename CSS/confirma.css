@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #F0CD5C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+    
+.sacola-container {
+    width: 90%;
+    max-width: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+}
+    
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+    
+.logo {
+    width: 60px;
+}
+
+.user-icon {
+    font-size: 24px;
+}
+    
+.sacola-title {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.pedido-confirmado {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+.pedido-confirmado h3 {
+    font-size: 22px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.confirmacao-info p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.confirmar-pedido {
+    background-color: #EBBE29; /* Cor dourada */
+    color: white;
+    font-size: 18px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px; /* Bordas arredondadas */
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.confirmar-pedido:hover {
+    background-color: #d29e26; /* Tom mais escuro de dourado */
+    transform: translateY(-3px); /* Efeito de leve elevação */
+}
+
+.confirmar-pedido:active {
+    background-color: #c68e1d; /* Tom ainda mais escuro */
+    transform: translateY(0); /* Retorna ao estado normal quando pressionado */
+}
+
+.alterar-dados {
+    background-color: transparent;
+    color: #666;
+    font-size: 14px;
+    border: none;
+    margin-top: 5px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.alterar-dados:hover {
+    color: #333;
+    text-decoration: none;
+}

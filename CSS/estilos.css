@@ -1,0 +1,150 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Cabeçalho */
+#header {
+  background-color: #EBBE29; /* Cor de fundo */
+  padding: 5px 5px; /* Um pouco de padding */
+  color: black;
+  text-align: center; /* Texto centralizado */
+  font-size: 90px; /* Fonte grande */
+  font-weight: bold;
+  position: fixed; /* Posição fixa - fica no topo da página */
+  top: 0;
+  width: 100%; /* Largura total */
+}
+
+/* Subcabeçalho */
+.subcabecalho {
+  text-align: center;
+  margin-top: 180px;
+  height: 100px;
+  color: #ddd;
+  font-size: xx-large;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: dimgray;
+}
+
+/* Carrossel */
+.slider {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.slider-content {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider-item img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  background-color: #bbb;
+  margin: 0 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.indicator.active {
+  background-color: #333;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Texto sobre a Choperia */
+.parent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  margin: 20px;
+}
+
+.div1 {
+  padding: 20px;
+  background-color: #555353;
+  opacity: 0.9;
+  color: white;
+  border-radius: 5%;
+  font-size: 20px;
+}
+
+.div2 img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Rodapé */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #EBBE29;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  height: 107px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+}
+
+.icones {
+  display: flex;
+  padding: 16px;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.dropbtn {
+  background-color: #EBBE29;
+  border: none;
+}

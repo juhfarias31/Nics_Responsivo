@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido Confirmado - Nics Choperia</title>
+    <link rel="stylesheet" href="./CSS/confirma.css">
+</head>
+<body>
+
+<!-- Logo -->
+<div class="sacola-container">
+    <header class="header">
+        <a href="index.html"><img src="./img/logo.png" width="100%" height="100%" alt="NICS Choperia" class="logo"></a>
+
+        <!-- Perfil -->
+        <div class="user-icon">
+            <a href="login.html"></a><img src="./img/Perfil2.png" width="70%" height="70%" alt="Ícone do Perfil">
+        </div>
+    </header>
+
+    <!-- Confirmação -->
+    <h2 class="sacola-title">Pedido Confirmado!</h2>
+    
+    <section class="pedido-confirmado">
+        <h3>Seu pedido foi confirmado com sucesso.</h3>
+        <p>Obrigado por escolher a Nics Choperia! Estamos preparando seu pedido e logo estará a caminho.</p>
+
+        <div class="confirmacao-info">
+            <p><strong>Data de Entrega:</strong> Hoje, em até 30-45 minutos.</p>
+            <p><strong>Endereço:</strong> Rua Francisco Zeca da Silva, 75, Sorocaba/SP</p>
+            <p><strong>Forma de Pagamento:</strong> Pagar pelo App.</p>
+        </div>
+    </section>
+
+    <!-- Botões -->
+    <button class="confirmar-pedido" onclick="window.location.href='index.html'">Voltar para a página inicial</button>
+    <button class="alterar-dados" onclick="window.location.href='sacola.html'">Voltar para a sacola</button>
+</div>
+
+<script>
+    // Evento para o botão "Voltar para a página inicial"
+    const confirmarPedidoButton = document.querySelector('.confirmar-pedido');
+    confirmarPedidoButton.addEventListener('click', () => {
+        alert('Obrigado por confirmar seu pedido! Você será redirecionado para a página inicial.');
+    });
+
+    // Evento para o botão "Voltar para a sacola"
+    const alterarDadosButton = document.querySelector('.alterar-dados');
+    alterarDadosButton.addEventListener('click', () => {
+        alert('Você pode alterar seu pedido na sacola.');
+    });
+</script>
+
+</body>
+</html>
